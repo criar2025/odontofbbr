@@ -1,0 +1,232 @@
+/* Estilos Responsivos */
+
+/* Tablets e dispositivos médios */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.3rem;
+    }
+    
+    .impact h2, .assistant h2, .questions h2, .test-content h2, .courses h2, .study-content h2, .final-cta h2 {
+        font-size: 2.2rem;
+    }
+    
+    .test-content h3, .study-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-text {
+        padding: 30px;
+    }
+    
+    .questions-preview img {
+        max-width: 90%;
+    }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--branco);
+        box-shadow: var(--sombra);
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .menu.active {
+        display: flex;
+    }
+    
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero .container, .impact .container, .assistant .container, .knowledge-test .container, .study-mode .container {
+        flex-direction: column;
+    }
+    
+    .hero-content, .impact-text, .assistant-content, .study-content {
+        padding: 0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .test-content {
+        padding: 0;
+        margin-top: 40px;
+        text-align: center;
+    }
+    
+    .hero-image, .impact-image, .assistant-image, .test-image, .study-image {
+        text-align: center;
+    }
+    
+    .carousel-content {
+        flex-direction: column;
+    }
+    
+    .carousel-image, .carousel-text {
+        width: 100%;
+    }
+    
+    .carousel-text {
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .questions-preview img {
+        max-width: 100%;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+    
+    .impact h2, .assistant h2, .questions h2, .test-content h2, .courses h2, .study-content h2, .final-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .test-content h3, .study-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .questions-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .course-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Ajustes para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Modo escuro */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --branco: #1a1a1a;
+        --neutro-claro: #2a2a2a;
+        --neutro-escuro: #f5f5f5;
+    }
+    
+    body {
+        color: #f5f5f5;
+    }
+    
+    .feature, .course-card {
+        background-color: #2a2a2a;
+    }
+    
+    .chat-input {
+        background-color: #2a2a2a;
+    }
+    
+    .chat-input input {
+        background-color: #333;
+        color: #f5f5f5;
+    }
+}
+
+/* Animações suaves */
+.summary-card, .feature, .course-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.summary-card.visible, .feature.visible, .course-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Melhorias de acessibilidade */
+.btn-primary:focus, .btn-secondary:focus, .btn-outline:focus {
+    outline: 3px solid var(--roxo-claro);
+    outline-offset: 2px;
+}
+
+input:focus {
+    outline: 3px solid var(--roxo-claro);
+}
+
+/* Estilos para impressão */
+@media print {
+    header, footer, .final-cta, .assistant, .knowledge-test {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+    
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+}
